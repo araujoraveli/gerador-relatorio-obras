@@ -2,7 +2,7 @@ name: Compilar Executável Windows
 
 on:
   push:
-    branches: [ main ]  # Roda toda vez que você der push na branch main
+    branches: [ main ]
 
 jobs:
   build:
@@ -10,10 +10,10 @@ jobs:
 
     steps:
     - name: Checkout do código
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4  # Atualizado de v3 para v4
 
     - name: Configurar Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5 # Atualizado de v4 para v5
       with:
         python-version: '3.9'
 
@@ -28,7 +28,7 @@ jobs:
         pyinstaller --noconsole --onefile gerador_relatorio.py
 
     - name: Upload do arquivo .exe
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v4 # Já estava na v4
       with:
         name: RelatorioObras-Windows
         path: dist/gerador_relatorio.exe
