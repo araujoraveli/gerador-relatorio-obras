@@ -28,7 +28,7 @@ jobs:
         pyinstaller --noconsole --onefile gerador_relatorio.py
 
     - name: Upload do arquivo .exe
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: RelatorioObras-Windows
         path: dist/gerador_relatorio.exe
